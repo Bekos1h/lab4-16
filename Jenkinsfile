@@ -20,7 +20,7 @@ pipeline {
 
         stage('Image gate') {
             steps {
-                sh 'trivy image --pkg-types library --severity HIGH,CRITICAL --ignore-unfixed --skip-dirs /usr/local/lib/node_modules --exit-code 1 $IMAGE:$BUILD_NUMBER'
+                sh 'trivy image --pkg-types library --severity HIGH,CRITICAL --ignore-unfixed --skip-dirs /usr/local/lib/python3.11/site-packages/setuptools/_vendor --exit-code 1 $IMAGE:$BUILD_NUMBER'
             }
         }
 
